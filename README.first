@@ -1,0 +1,53 @@
+README.first
+
+These programs are run on a Raspberry Pi B with an Adafruit
+Prototyping Pi Plate Kit [Adafruit product id 801].
+
+It has three AM2302 temperature sensors (wired DHT22) [Adafruit product id 393].
+
+It used a Magnetic contact switch (door sensor) [Adafruit product id 375]
+on the window until we replaced the Roman shade with a shutter.
+
+A set of small laptop speakers were attached.
+
+The purpose is to check the outside temperature vs. computer room temperature.
+Originally, the Pi would "speak" and warn about temperature rising, close the windows.
+When the outside temp was cooler to open up the windows.  The contact switch
+sometimes was misread - my wife got annoyed at the messages.
+
+The first version put into git, uses flask on port 5000 to share the last check temps
+and a graph of today and the month.
+
+The raspberry pi has Python 2.7, Mongo, flask, matplotlib, pandas, DHT22, banner.
+
+Added to pi's .bashrc: /home/pi/pi_temp/show_mongo.py 
+
+Shows:
+
+window open
+2016-09-21 16:10:00
+        #######                    #            #######  #####          #######
+        #     #  #    #   #####   # #           #    #  #     #         #    #
+        #     #  #    #     #      #                #   #     #             #
+        #     #  #    #     #                      #     ######            #
+        #     #  #    #     #      #              #           #   ###     #
+        #     #  #    #     #     # #             #     #     #   ###     #
+        #######   ####      #      #              #      #####    ###     #
+
+######                             #             #####   #####           #####
+#     #   ####    ####   #    #   # #           #     # #     #         #     #
+#     #  #    #  #    #  ##  ##    #            #       #     #         #     #
+######   #    #  #    #  # ## #                 ######   ######          ######
+#   #    #    #  #    #  #    #    #            #     #       #   ###         #
+#    #   #    #  #    #  #    #   # #           #     # #     #   ###   #     #
+#     #   ####    ####   #    #    #             #####   #####    ###    #####
+
+#                                  #             #####   #####           #####
+#           #    #    #     #     # #           #     # #     #         #     #
+#           #    #    #     #      #            #       #                     #
+#           #    #    #     #                   ######  ######           #####
+#           #    #    #     #      #            #     # #     #   ###   #
+#           #     #  #      #     # #           #     # #     #   ###   #
+#######     #      ##       #      #             #####   #####    ###   #######
+
+
